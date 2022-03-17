@@ -163,6 +163,30 @@
 //     }
 // }
 
+// alert( Object.keys(Person) );
+
+// alert( Object.values(Person) );
+
+// const Human = [1, 25, 32, 54, 8];
+
+// alert(JSON.stringify(Human));
+
+// let helloString = "how,are,you";
+// console.log(helloString.split(","));
+
+// let helloString = '{"name": "Kenny", "age": 28, "eyeColor": "brown"}';
+// console.log(JSON.parse(helloString));
+
+
+
+// const Man = {
+//     name: "Kenny", age: 40, sex: "male"
+// }
+
+// alert(typeof(Man.age));
+
+
+
 // Person.age = 40;
 // Person.bank = "GTB"
 
@@ -185,6 +209,243 @@
 // logHello = () => alert("Hello World");
 
 // logHello();
+
+// var myString = '{"favoriteFood":"Pizza","hobby":"Coding"}';
+// console.log(JSON.parse(myString));
+
+
+// class Person1 {
+//     constructor(name, age, height, address, hobby, car){
+//         this.name = name;
+//         this.age = age;
+//         this.height = height;
+//         this.address = address;
+//         this.hobby = hobby;
+//         this.car = car;
+//     }
+// }
+// let NewMan = new Person1("Kenny", 30, 6.4, "12 Rosamond Street, Lagos", ["Drawing", "Writing", "Gaming"], "Toyota Camry");
+// alert(JSON.stringify(NewMan));
+// console.log(NewMan);
+
+
+// class Car {
+//       constructor(name, year) {
+//         this.name = name;
+//         this.year = year;
+//     }
+    
+//     age() {
+//         let date = new Date();
+//         return date.getFullYear() - this.year;
+//         }
+//     }
+
+//     let myCar = new Car("Ford", 2014);
+//     document.getElementById("demo").innerHTML =
+//     "My car is " + myCar.age() + " year old.";
+
+// const d = new Date(year);
+// const d = new Date(8, 11, 24, 10, 33, 30, 0);
+// const d = new Date("October 13, 2014 11:13:00");
+// const d = new Date();
+
+// alert(d);
+
+// class Person {
+//     constructor(name, hairColor){
+//     this.name = name;
+//     this.hair = hairColor;
+//     }
+//     firstDescribe(){
+//         return(`My name is ${this.name} and I have ${this.hairColor} hair.`);
+//     }
+// }
+
+// class Man extends Person {
+//     constructor(name, hairColor, height, hairType){
+//         super(name);
+//         this.height = height;
+//         this.hairType = hairType;
+//         this.hairColor = hairColor;
+//         }
+//         mainDescribe(){
+//             return(`${this.firstDescribe()} Also, I am ${this.height} feet tall and I have ${this.hairType} hair.`);
+//         }
+// }
+
+// let boy = new Man("Kenny", "Black", 6.4, "Afro");
+// alert(boy.mainDescribe());
+
+
+
+
+
+// I was trying out something with prompts
+
+// let name = prompt("What is your name?");
+// let hairColor = prompt("What is the color of your hair?");
+// let height = prompt("How tall are you?");
+// let hairType = prompt("What type of hair do you have?");
+
+// let boy1 = {name, hairColor, height, hairType}
+
+
+// const People = {
+//     name: "Kenny",
+//     age: 32,
+//     address: "12 Rosamond Street, Lagos"
+// }
+// const {name, age, address} = People;
+// alert(`My name is ${name}, I am ${age} years old, and I live at ${address}`);
+
+// const heading = document.getElementById("heading");
+// console.log(heading);
+// // alert(heading);
+
+// const pst = document.getElementsByTagName("p");
+// console.log(pst);
+
+
+// let firstPara = document.getElementById("firstPara");
+// let p1 = document.getElementById("p1");
+// let p2 = document.getElementById("p2");
+// let p3 = document.getElementById("p3");
+// let p4 = document.getElementById("p4");
+// let newPara = document.createElement("p");
+// let text = document.createTextNode("Welcome to Javascript.");
+
+// newPara.appendChild(text);
+// firstPara.appendChild(newPara);
+
+
+// p1.style.color = "Blue";
+// firstPara.style.backgroundColor = "pink";
+
+
+
+// window.navigator.userAgent;
+// window.alert("Hello World");
+// window.confirm("Do you wish to continue?");
+
+// function alertbox() {
+//     alert("It's quiz time!");
+//     let timer = setTimeout(timing, 3000)
+// }
+
+// alertbox();
+
+
+
+
+
+// function alertbox() {
+//     alert("It's quiz time!");
+// }
+// let callAlert = setInterval(alertbox, 5000);
+// window.clearInterval(callAlert);
+
+// function myFunction(a, b) {  return a * b;}
+// let text = myFunction.toString();
+// alert(text);
+
+
+// let button = document.getElementById("counter");
+// let count = document.getElementById("count");
+// let pos = 0;
+
+// button.addEventListener("click", clickMe, false);
+// function clickMe() {
+//     count.innerHTML = ++pos;
+// }
+
+
+setInterval(myFunction, 1000);
+
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo1").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+}
+
+const staffData = [
+    {
+    display: "img/shosan.jpg",
+    userName: "Shosan Boggs",
+    desc: "CEO of Shosan Enterprises",
+    idNumber: "1"
+    },
+    {
+    display: "img/jinchu.jpg",
+    userName: "Jinchu Shinsei",
+    desc: "COO and Financial Secretary of Shosan Enterprises",
+    idNumber: "2"
+    },
+    {
+    display: "img/sarah.jpg",
+    userName: "Sarah Williams",
+    desc: "Head of Board of Trustees of Shosan Enterprises",
+    idNumber: "3"
+    },
+    {
+    display: "img/kara.jpg",
+    userName: "Kara Boggs",
+    desc: "Manager of Shosan Enterprises",
+    idNumber: "4"
+    }
+]
+
+
+
+let numLoop = 0;
+
+window.addEventListener("DOMContentLoaded", function () {
+    staffGen();
+})
+
+let picSlot = document.getElementById("picBackGround");
+let staffName = document.getElementById("staffName");
+let desc = document.getElementById("desc");
+let serialNum = document.getElementById("sn");
+let leftButton = document.getElementById("leftBtn");
+let rightButton = document.getElementById("rightBtn");
+let faceBookLink = document.getElementById("fb")
+
+function staffGen() {
+    picSlot.src = staffData[numLoop].display;
+    staffName.textContent = staffData[numLoop].userName;
+    desc.textContent = staffData[numLoop].desc;
+    serialNum.textContent = staffData[numLoop].idNumber;
+}
+
+leftButton.addEventListener("click", function () {
+    numLoop--
+    if (numLoop < 0){
+        numLoop = staffData.length - 1;
+    }
+    staffGen();
+})
+
+rightButton.addEventListener("click", function () {
+    numLoop++
+    if (numLoop > staffData.length - 1){
+        numLoop = 0;
+    }
+    staffGen();
+})
+
+faceBookLink.addEventListener("click", function (event) {
+    event.preventDefault();
+})
+
+
+
+
+
+
+
 
 
 
