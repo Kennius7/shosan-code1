@@ -1,0 +1,62 @@
+body{
+    background-image: linear-gradient(rgba(17, 18, 19, 0.8), rgb(10, 10, 10)), url(img/examBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 660px;
+}
+
+#questionBox{
+    width: 600px;
+    height: 330px;
+    background-color: rgb(241, 234, 247);
+    border-radius: 15px;
+    margin-left: 380px;
+    margin-top: 50px;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+}
+
+#opA{
+    width: 500px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+#opB{
+    width: 500px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 8px;
+}
+
+#opC{
+    width: 500px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 8px;
+}
+
+#opD{
+    width: 500px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 8px;
+}
+
+
+
+

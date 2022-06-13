@@ -1,0 +1,23 @@
+body{
+    background-image: linear-gradient(rgba(17, 18, 19, 0.8), rgb(10, 10, 10)), url(img/examBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 660px;
+}
+
+#startTimer{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(82, 196, 231);
+    margin-left: 400px;
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    margin-top: 150px;
+    border-radius: 50%;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+
+
+

@@ -1,0 +1,193 @@
+#cbtBody{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(img/exampics.jpg);
+    background-attachment: fixed;
+    color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    height: 660px;
+    background-size: cover;
+    margin-top: 0px;
+    padding-top: 0px; 
+}
+#fullName{
+    width: 400px;
+    border-color: aqua; 
+}
+#exampleInputEmail1{
+    width: 400px;
+    border-color: aqua;
+}
+#exampleInputPassword1{
+    width: 400px;
+    border-color: aqua;
+}
+#passErrorMsg{
+    color: red;
+    width: 400px;
+}
+#topMostSection{
+    margin-bottom: 100px;
+}
+#testName{
+    color: aqua;
+    margin-top: -100px;
+}
+#btn1{
+    margin-left: 160px;
+    margin-top: 10px;
+}
+#formBorder{
+    background-color: white;
+    width: 600px;
+    height: 330px;
+    border-radius: 20px;
+    padding-top: 5px;
+    margin-top: -20px;
+}
+.form-control{
+    width: 400px;
+    border-color: rgb(61, 61, 223);
+}
+#formControl1{
+    margin-left: 90px;
+}
+#logo1{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-color: white;
+    border-style: solid;
+}
+
+@media screen and (max-width: 425px) {
+    #cbtBody{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(img/exampics.jpg);
+        background-attachment: fixed;
+        color: rgb(255, 255, 255);
+        background-repeat: no-repeat;
+        width: 580px;
+        height: 1000px;
+        background-size: cover;
+        margin-top: 0px;
+        padding-top: 0px; 
+    }
+    #testName{
+        color: aqua;
+        margin-top: -100px;
+        margin-left: 160px;
+    }
+    #formBorder{
+        background-color: white;
+        width: 500px;
+        height: 330px;
+        border-radius: 20px;
+        padding-top: 5px;
+        margin-top: -20px;
+    }
+    #fullName{
+        width: 300px;
+        border-color: aqua; 
+    }
+    #exampleInputEmail1{
+        width: 300px;
+        border-color: aqua;
+    }
+    #exampleInputPassword1{
+        width: 300px;
+        border-color: aqua;
+    }
+    #btn1{
+        margin-left: 100px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 426px) {
+    #cbtBody{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(img/exampics.jpg);
+        background-attachment: fixed;
+        color: rgb(255, 255, 255);
+        background-repeat: no-repeat;
+        width: 600px;
+        height: 800px;
+        background-size: cover;
+        margin-top: 0px;
+        padding-top: 0px; 
+    }
+    #testName{
+        color: aqua;
+        margin-top: -100px;
+        margin-left: 160px;
+    }
+    #formBorder{
+        background-color: white;
+        width: 500px;
+        height: 330px;
+        border-radius: 20px;
+        padding-top: 5px;
+        margin-top: -20px;
+    }
+    #fullName{
+        width: 300px;
+        border-color: aqua; 
+    }
+    #exampleInputEmail1{
+        width: 300px;
+        border-color: aqua;
+    }
+    #exampleInputPassword1{
+        width: 300px;
+        border-color: aqua;
+    }
+    #btn1{
+        margin-left: 100px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 601px) {
+    #cbtBody{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(img/exampics.jpg);
+        background-attachment: fixed;
+        color: rgb(255, 255, 255);
+        background-repeat: no-repeat;
+        width: 900px;
+        height: 900px;
+        background-size: cover;
+        margin-top: 0px;
+        padding-top: 0px; 
+    }
+    #testName{
+        color: aqua;
+        margin-top: -100px;
+        margin-left: 100px;
+    }
+    #formBorder{
+        background-color: white;
+        width: 580px;
+        height: 330px;
+        border-radius: 20px;
+        padding-top: 5px;
+        margin-top: -20px;
+    }
+    #fullName{
+        width: 400px;
+        border-color: aqua; 
+    }
+    #exampleInputEmail1{
+        width: 400px;
+        border-color: aqua;
+    }
+    #exampleInputPassword1{
+        width: 400px;
+        border-color: aqua;
+    }
+    #btn1{
+        margin-left: 100px;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
