@@ -7,57 +7,48 @@
     <title>Exam Page</title>
     <link rel="stylesheet" href="quizPage.css">
     <link rel="stylesheet" href="bootstrap-dist/bootstrap-dist1/css/bootstrap.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 </head>
 <body>
     <div id="quizBody">
-        <div class="container-fluid d-flex pt-4">
-            <div id="timerBorder" class="container-fluid bg-dark 
-            border border-warning rounded-circle border-3 text-center" style="width: 190px; height: 170px; 
-            color: goldenrod;">
-                <div id="timer1" class="text-center text-middle" style="margin-top: 70px;"></div>
+        <div id="topSection">
+            <div id="timerBorder">
+                <div id="timer1"></div>
             </div>
-            <div id="quizTitle" class="container-fluid" style="margin-left: -120px;">
-                <h1 id="quizTitle1" class="text-light text-center">Exam Questions</h1>
-                <h3 id="quizTitle2" class="text-info text-center">Current Affairs/General Knowledge</h3>
-                <div id="scoreText" class="mt-2 pt-2 text-center text-light text-middle fw-light fst-italic"></div>
+            <div id="quizTitle">
+                <h1 id="quizTitle1">Exam Questions</h1>
+                <h3 id="quizTitle2">Current Affairs/General Knowledge</h3>
             </div>
         </div>
-        <div id="warnText2" class="text-center text-light text-middle fw-light fst-italic" style="margin-top: -50px;"></div>
-        <div id="questionBox" name="questionButton" class="container-fluid">
-            <div id="question" class="mx-auto bg-info border border-2 border-dark rounded-3" style="width: 550px; height: 100px;"></div>
-            <div id="rBtn" class="" name="optionButton" style="margin-top: 0px;">
+        <div id="scoreText"></div>
+        <div id="questionBox" name="questionButton">
+            <div id="question"></div>
+            <div id="rBtn" class="" name="optionButton">
                 <button id="opA" name="optionValue1" onclick="optionSelect1()"></button> <br>
                 <button id="opB" name="optionValue2" onclick="optionSelect2()"></button> <br>
                 <button id="opC" name="optionValue3" onclick="optionSelect3()"></button> <br>
                 <button id="opD" name="optionValue4" onclick="optionSelect4()"></button>
             </div>
             <div class="container-fluid">
-                <div id="btnClass" class="d-flex" style="margin-left: 600px; margin-top: -15px;">
+                <div id="btnClass">
                     <div>
-                        <button id="prevBtn" class="btn btn-outline-info btn-sm text-info fw-bold"
-                        style="margin-left: -500px; margin-top: 20px; margin-right: 100px;">Previous</button>
-                    </div>
-                    <div>
-                        <button id="nextBtn" class="btn btn-outline-info btn-sm text-info fw-bold"
-                        style="margin-left: -200px; margin-top: 20px; margin-right: 100px;">Next</button>
+                        <button id="prevBtn">Previous</button>
                     </div>
                     <div>
                         <form action="scorePage.html">
-                            <button id="submit" type="submit" class="btn btn-outline-danger btn-sm text-danger fw-bold" 
-                            style="margin-left: -350px; margin-top: 20px; margin-right: 100px;">Submit</button>
+                            <button id="submit" type="submit">Submit</button>
                         </form>
+                    </div>
+                    <div>
+                        <button id="nextBtn">Next</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div>
-        <div id="warnText" class="mt-2 pt-2 text-center text-light text-middle fw-light fst-italic"></div>
+        <div id="warnText"></div>
     </div>
 
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
     <script src="bootstrap-dist/bootstrap-dist1/js/bootstrap.bundle.min.js"></script>
     <script src="cbt.js"></script>
 </body>

@@ -5,21 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Based Test Page</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="cbt.css">
     <link rel="stylesheet" href="bootstrap-dist/bootstrap-dist1/css/bootstrap.min.css">
 </head>
-<body>
-    <div id="cbtBody" class="">
-        <div id="topMostSection" class="flex">
-            <img src="img/shosan.jpg" alt="logo" id="logo1" class="ms-4 mt-4">
-            <h3 id="testName" class="text-center pb-4 mb-4">SHOSAN COMPUTER BASED TEST</h3>
+<body id="cbtBody">
+    <div id="">
+        <div id="topMostSection" class="d-flex">
+            <img src="img/shosan.jpg" alt="logo" id="logo1" class="">
+            <div id="textColumn" class="container">
+                <h5 id="testName" class="">SHOSAN COMPUTER BASED TEST</h5>
+                <div id="lowerText" class="">Welcome to your Computer Based Test.</div>
+            </div>   
         </div>
-        <div class="">
-            
-        </div>
-        <div id="formBorder" class="container-fluid justify-center">
-            <form action="startPage.html" onsubmit="(cbtValidate())" method="" id="formControl1" name="cbtForm" class="mt-4 offset-4 col-4">
+        <!-- <div id="secondLowerText">
+            Follow through with the instructions, after login in.
+        </div> -->
+        <div id="formBorder" class="">
+            <form action="startPage.html" onsubmit="(cbtValidate())" method="" id="formControl1" name="cbtForm" class="">
                 <div class="mb-1">
                     <label for="fullName" class="form-label"></label>
                     <input type="text" placeholder="Full Name" name="fullName" class="form-control" id="fullName">
@@ -33,10 +35,10 @@
                     <input type="password" placeholder="Password" name="passwordForm" class="form-control" id="exampleInputPassword1">
                     <div id="passErrorMsg" class="form-text"></div>
                 </div>
-                <div>
-                    <button id="btn1" type="submit" class="btn btn-primary btn-info text-light fw-bold">
-                        Login
-                    </button>
+                <div id="btnDiv">
+                        <button id="loginBtn" type="submit" class="btn btn-primary btn-info text-light fw-bold">
+                            Login
+                        </button>
                 </div>
             </form>
         </div>
