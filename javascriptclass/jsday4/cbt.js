@@ -41,7 +41,9 @@ const examData = [
      optionD: "4. Nnamdi Azikiwe",
      correctAnswer: "1. Sir James Wilson Robertson"  
 }
-]
+];
+
+const examOptionsDB = [];
 
 
 const errMsg2 = document.getElementById("passErrorMsg");
@@ -127,64 +129,6 @@ printScore = () => {
 printScore();
 
 
-
-// let d = 0;
-// let sec = Math.floor(d % 3600 % 60);
-// let mins = Math.floor(d % 3600 / 60);
-// let hrs = Math.floor(d / 3600);
-// let setInt2 = 0;
-
-
-// startPageTimer = () => {
-//     setInt2 = setInterval(() => {
-//         d++;
-//         let displayTimer1 = `0${hrs} : 0${mins} : 0${sec}`
-//         let displayTimer2 = `0${hrs} : ${mins} : 0${sec}`
-//         let displayTimer3 = `0${hrs} : ${mins} : ${sec}`
-//         let displayTimer4 = `0${hrs} : 0${mins} : ${sec}`
-//         let displayTimer5 = `${hrs} : 0${mins} : 0${sec}`
-//         let displayTimer6 = `${hrs} : ${mins} : 0${sec}`
-//         let displayTimer7 = `${hrs} : ${mins} : ${sec}`
-//         let displayTimer8 = `${hrs} : 0${mins} : ${sec}`
-
-//         if (hrs < 10 && mins < 10 && sec < 10) {
-//             startTimer11.innerHTML = displayTimer1;  
-//         }
-//         else if (hrs < 10 && mins > 9 && sec < 10) {
-//             startTimer11.innerHTML = displayTimer2;
-//         }
-//         else if (hrs < 10 && mins > 9 && sec > 9) {
-//             startTimer11.innerHTML = displayTimer3;
-//         }
-//         else if (hrs < 10 && mins < 10 && sec > 9) {
-//             startTimer11.innerHTML = displayTimer4;
-//         }
-//         else if (hrs > 9 && mins < 10 && sec < 10) {
-//             startTimer11.innerHTML = displayTimer5;    
-//         }
-//         else if (hrs > 9 && mins > 9 && sec < 10) {
-//             startTimer11.innerHTML = displayTimer6;
-//         }
-//         else if (hrs > 9 && mins > 9 && sec > 9) {
-//             startTimer11.innerHTML = displayTimer7;
-//         }
-//         else if (hrs > 9 && mins < 10 && sec > 9) {
-//             startTimer11.innerHTML = displayTimer8;
-//         } 
-//     }, 1000);  
-// }
-// startPageTimer()
-// clearTimerCBT = () => {
-//     event.preventDefault();
-//     clearInterval(setInt2);
-//     startTimer11.innerHTML = "START CBT"
-//     setTimeout(() => {
-//         window.location.href = "quizPage.html"
-//     }, 5000);
-// }
-
-
-
 let b = 300;
 let sec2 = 0;
 let mins2 = 0;
@@ -238,11 +182,11 @@ examCountDownTimer = () => {
    setTimeout(() => {
        clearInterval(setInt3);
        examTimer.innerHTML = "Time Up!"
-   }, 100000);
+   }, 300000);
    setTimeout(() => {
     examTimer.innerHTML = ""
     window.location.href = "scorePage.html";
-}, 103000);
+}, 303000);
 }
 examCountDownTimer();
 
@@ -303,7 +247,7 @@ optionSelect4 = () => {
     examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
 }
 
-//scoreTextUpload.innerHTML = `Your score is ${examScore}`
+
 
 loadExam();
 submitButton.style.display = "none";
@@ -314,121 +258,128 @@ nextButton.addEventListener("click", function () {
     }
 
 
-  
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionAvalue == examData[currentQuestion].correctAnswer){
+        examOptionAvalue == examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
         examScore += 5;
         option = 0;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionAvalue);
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionBvalue == examData[currentQuestion].correctAnswer){
+        examOptionBvalue == examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
         examScore += 5;
         option = 0;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionBvalue);
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionCvalue == examData[currentQuestion].correctAnswer){
+        examOptionCvalue == examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
         examScore += 5;
         option = 0;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionCvalue);
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionDvalue == examData[currentQuestion].correctAnswer){
+        examOptionDvalue == examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
         examScore += 5;
         option = 0;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionDvalue);
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
 
 
 
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionAvalue == examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examOptionAvalue){
+        examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+       
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionBvalue == examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examOptionBvalue){
+        examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+       
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionCvalue == examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examOptionCvalue){
+        examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+       
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionDvalue == examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examOptionDvalue){
+        examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+       
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
 
 
@@ -436,117 +387,129 @@ nextButton.addEventListener("click", function () {
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionAvalue != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+        
         option = 0;
+        examOptionsDB[currentQuestion] = null;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionBvalue != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+        
         option = 0;
+        examOptionsDB[currentQuestion] = null;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionCvalue != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+        
         option = 0;
+        examOptionsDB[currentQuestion] = null;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
         examOptionDvalue != examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore += 0;
+        
         option = 0;
+        examOptionsDB[currentQuestion] = null;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
 
 
 
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionAvalue != examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examData[currentQuestion].correctAnswer){
+        examOptionAvalue != examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore -= 5;
-        localStorage.removeItem(`selectedOption${currentQuestion}`);
+        examOptionsDB[currentQuestion] = null;
+        examScore =- 5;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+       
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionBvalue != examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examData[currentQuestion].correctAnswer){
+        examOptionBvalue != examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore -= 5;
-        localStorage.removeItem(`selectedOption${currentQuestion}`);
+        examOptionsDB[currentQuestion] = null;
+        examScore =- 5;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionCvalue != examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examData[currentQuestion].correctAnswer){
+        examOptionCvalue != examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore -= 5;
-        localStorage.removeItem(`selectedOption${currentQuestion}`);
+        examOptionsDB[currentQuestion] = null;
+        examScore =- 5;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
     else if (currentQuestion >= 0 && currentQuestion < examData.length - 1 && option == 1 && 
-        examOptionDvalue != examData[currentQuestion].correctAnswer && 
-        localStorage.getItem(`selectedOption${currentQuestion}`) == examData[currentQuestion].correctAnswer){
+        examOptionDvalue != examData[currentQuestion].correctAnswer && examOptionsDB[currentQuestion] == examData[currentQuestion].correctAnswer){
         submitButton.style.display = "none";
-        examScore -= 5;
-        localStorage.removeItem(`selectedOption${currentQuestion}`);
+        examOptionsDB[currentQuestion] = null;
+        examScore =- 5;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         option = 0;
         currentQuestion++;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         loadExam();
+        console.log(examOptionsDB);
     }
 
 
@@ -554,35 +517,45 @@ nextButton.addEventListener("click", function () {
     else if (currentQuestion == examData.length - 1 && option == 1 &&
         examOptionAvalue == examData[currentQuestion].correctAnswer){
         examScore += 5;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionAvalue);
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         submitButton.style.display = "block";
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
     }
     else if (currentQuestion == examData.length - 1 && option == 1 &&
         examOptionBvalue == examData[currentQuestion].correctAnswer){
         examScore += 5;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionBvalue);
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         submitButton.style.display = "block";
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
     }
     else if (currentQuestion == examData.length - 1 && option == 1 &&
         examOptionCvalue == examData[currentQuestion].correctAnswer){
         examScore += 5;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionCvalue);
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         submitButton.style.display = "block";
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
     }
     else if (currentQuestion == examData.length - 1 && option == 1 &&
         examOptionDvalue == examData[currentQuestion].correctAnswer){
         examScore += 5;
-        localStorage.setItem(`selectedOption${currentQuestion}`, examOptionDvalue);
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        examOptionsDB[currentQuestion] = examData[currentQuestion].correctAnswer;
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         submitButton.style.display = "block";
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
     }
 
     else if (currentQuestion == examData.length - 1 && option == 1){
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
+        scoreTextUpload.innerHTML = `Your score is ${examScore}`
         submitButton.style.display = "block";
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
     }
 
 });
@@ -592,29 +565,6 @@ prevButton.addEventListener("click", function () {
         submitButton.style.display = "none";
         currentQuestion--;
         option = 0;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
-        examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        loadExam();
-    }
-    else if (currentQuestion < examData.length + 1){
-        submitButton.style.display = "none";
-        currentQuestion--;
-        option = 0;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
-        examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        examOptionD.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
-        loadExam();
-    }
-    else if (currentQuestion == examData.length){
-        submitButton.style.display = "none";
-        currentQuestion--;
-        option = 0;
-        //scoreTextUpload.innerHTML = `Your score is ${examScore}`
         examOptionA.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionB.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
         examOptionC.style.backgroundImage = "linear-gradient(rgba(2, 2, 2, 0.4), rgb(2, 2, 2))";
@@ -653,5 +603,58 @@ submitButton.addEventListener("click", function () {
 //     d.getSeconds();
 //     }
 
+// let d = 0;
+// let sec = Math.floor(d % 3600 % 60);
+// let mins = Math.floor(d % 3600 / 60);
+// let hrs = Math.floor(d / 3600);
+// let setInt2 = 0;
 
+
+// startPageTimer = () => {
+//     setInt2 = setInterval(() => {
+//         d++;
+//         let displayTimer1 = `0${hrs} : 0${mins} : 0${sec}`
+//         let displayTimer2 = `0${hrs} : ${mins} : 0${sec}`
+//         let displayTimer3 = `0${hrs} : ${mins} : ${sec}`
+//         let displayTimer4 = `0${hrs} : 0${mins} : ${sec}`
+//         let displayTimer5 = `${hrs} : 0${mins} : 0${sec}`
+//         let displayTimer6 = `${hrs} : ${mins} : 0${sec}`
+//         let displayTimer7 = `${hrs} : ${mins} : ${sec}`
+//         let displayTimer8 = `${hrs} : 0${mins} : ${sec}`
+
+//         if (hrs < 10 && mins < 10 && sec < 10) {
+//             startTimer11.innerHTML = displayTimer1;  
+//         }
+//         else if (hrs < 10 && mins > 9 && sec < 10) {
+//             startTimer11.innerHTML = displayTimer2;
+//         }
+//         else if (hrs < 10 && mins > 9 && sec > 9) {
+//             startTimer11.innerHTML = displayTimer3;
+//         }
+//         else if (hrs < 10 && mins < 10 && sec > 9) {
+//             startTimer11.innerHTML = displayTimer4;
+//         }
+//         else if (hrs > 9 && mins < 10 && sec < 10) {
+//             startTimer11.innerHTML = displayTimer5;    
+//         }
+//         else if (hrs > 9 && mins > 9 && sec < 10) {
+//             startTimer11.innerHTML = displayTimer6;
+//         }
+//         else if (hrs > 9 && mins > 9 && sec > 9) {
+//             startTimer11.innerHTML = displayTimer7;
+//         }
+//         else if (hrs > 9 && mins < 10 && sec > 9) {
+//             startTimer11.innerHTML = displayTimer8;
+//         } 
+//     }, 1000);  
+// }
+// startPageTimer()
+// clearTimerCBT = () => {
+//     event.preventDefault();
+//     clearInterval(setInt2);
+//     startTimer11.innerHTML = "START CBT"
+//     setTimeout(() => {
+//         window.location.href = "quizPage.html"
+//     }, 5000);
+// }
 
